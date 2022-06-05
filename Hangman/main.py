@@ -16,7 +16,7 @@ print(logo)
 #Testing code
 # print(f'Pssst, the solution is {chosen_word}.')
 
-#Create blanks in a list accordding to number of letters in the chosen word
+#Create blanks in a list according to number of letters in the chosen word
 display = []
 for _ in range(word_length):
     display += "_"
@@ -35,7 +35,7 @@ while not end_of_game:
         if letter == guess:
             display[position] = letter
 
-    #Check if user is wrong.
+    #Check if user is wrong.#lose condition
     if guess not in chosen_word:
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
         lives -= 1
@@ -46,7 +46,7 @@ while not end_of_game:
 
     print(f"{' '.join(display)}")
 
-    
+    #Win condition
     if "_" not in display:
         end_of_game = True #Escaping game loop
         print(f"The word was {chosen_word}.. You win.")
